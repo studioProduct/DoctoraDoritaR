@@ -9,38 +9,40 @@
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-<header class="site-header">
-  <div class="container header-inner">
-    <a class="brand" href="./" aria-label="Dra. Dorita Olarte, inicio"><img src="assets/images/logo.png" alt="Doctora Dorita Olarte Neuropsicóloga"></a>
+<header class="site-header site-header-home">
+  <div class="container header-home-shell">
     <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
-    <nav class="nav" aria-label="Navegación principal">
-      <a href="./" aria-current="page">Inicio</a>
-      <a href="sobre-mi/">Sobre mí</a>
-      <a href="servicios/">Servicios</a>
-      <a href="contacto/">Contacto</a>
-      <a class="btn" href="contacto/">Agendar consulta <span aria-hidden="true">→</span></a>
+    <nav class="nav nav-home" aria-label="Navegación principal">
+      <div class="nav-group nav-group-left">
+        <a href="./" aria-current="page">Inicio</a>
+        <a href="sobre-mi/">Sobre mí</a>
+        <a href="servicios/">Servicios</a>
+      </div>
+      <a class="brand brand-home" href="./" aria-label="Dra. Dorita Olarte, inicio"><img src="assets/images/logo.png" alt="Doctora Dorita Olarte Neuropsicóloga"></a>
+      <div class="nav-group nav-group-right">
+        <a href="contacto/">Contacto</a>
+        <a class="btn" href="contacto/">Agendar cita <span aria-hidden="true">→</span></a>
+      </div>
     </nav>
   </div>
 </header>
 
 <main>
-  <section class="hero">
-    <div class="hero-copy">
-      <div class="hero-copy-inner fade-up">
-        <span class="eyebrow">Neuropsicología clínica · Psicoterapia</span>
-        <h1 class="display">Una mirada integral a tu bienestar emocional y cognitivo.</h1>
-        <p class="lead">Acompañamiento para adultos que integra ciencia, experiencia clínica y una comprensión profunda de la historia de cada persona.</p>
-        <div class="hero-actions">
-          <a class="btn" href="contacto/">Agendar consulta <span aria-hidden="true">→</span></a>
-          <a class="btn btn-outline" href="servicios/">Conocer servicios</a>
-        </div>
-        <div class="hero-meta">Rionegro, Antioquia · Atención a adultos</div>
+  <section class="hero hero-home-centered">
+    <div class="hero-home-overlay" aria-hidden="true"></div>
+    <div class="container hero-home-content fade-up">
+      <span class="eyebrow">Neuropsicología clínica · Psicoterapia</span>
+      <h1 class="display hero-home-title">Una mirada integral a tu bienestar emocional y cognitivo.</h1>
+      <p class="lead hero-home-lead">Neuropsicología clínica y psicoterapia para adultos, integrando ciencia, experiencia clínica y un acompañamiento profundamente humano.</p>
+      <div class="hero-actions hero-home-actions">
+        <a class="btn" href="contacto/">Agendar consulta <span aria-hidden="true">→</span></a>
+        <a class="btn btn-outline" href="servicios/">Conocer servicios</a>
       </div>
-    </div>
-    <div class="hero-portrait hero-video-wrap">
-      <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="assets/images/dorita-hero-poster.webp" aria-label="Dra. Dorita Olarte">
-        <source src="assets/video/dorita-hero.mp4" type="video/mp4">
-      </video>
+      <div class="scroll-cue" aria-hidden="true">
+        <span class="scroll-line"></span>
+        <span class="scroll-text">Descubre más</span>
+        <span class="scroll-arrow">⌄</span>
+      </div>
     </div>
   </section>
 

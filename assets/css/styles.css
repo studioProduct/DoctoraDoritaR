@@ -380,3 +380,179 @@ textarea { min-height:130px; resize:vertical; }
   .hero-video { min-height: 430px; }
   .image-banner { min-height: 390px; padding: 60px 0; }
 }
+
+
+/* Homepage centered hero update */
+.site-header-home {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: transparent;
+  backdrop-filter: none;
+  border-bottom: 0;
+}
+.header-home-shell {
+  position: relative;
+  padding: 24px 0 0;
+}
+.nav-home {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 34px;
+  width: 100%;
+}
+.nav-group {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+.nav-group-right {
+  justify-content: flex-end;
+}
+.brand-home {
+  justify-self: center;
+}
+.brand-home img {
+  width: 162px;
+}
+.site-header-home .nav a,
+.site-header-home .menu-toggle {
+  color: var(--ink);
+}
+.site-header-home .nav a:not(.btn)::after {
+  bottom: -10px;
+}
+.hero-home-centered {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 210px 0 110px;
+  text-align: center;
+  background: url('../images/home-hero-forest.webp') center center / cover no-repeat;
+  overflow: hidden;
+}
+.hero-home-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(249,250,248,.94) 0%, rgba(249,250,248,.82) 24%, rgba(249,250,248,.48) 55%, rgba(14,52,53,.16) 100%);
+}
+.hero-home-content {
+  position: relative;
+  z-index: 1;
+  max-width: 920px;
+}
+.hero-home-title {
+  font-size: clamp(3.8rem, 7vw, 6.5rem);
+  line-height: .98;
+  max-width: 980px;
+  margin: 0 auto;
+}
+.hero-home-lead {
+  margin: 30px auto 0;
+  max-width: 760px;
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  color: #42514f;
+}
+.hero-home-actions {
+  justify-content: center;
+  margin-top: 34px;
+}
+.scroll-cue {
+  margin-top: 95px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255,255,255,.92);
+  text-transform: uppercase;
+  letter-spacing: .24em;
+  font-size: .78rem;
+}
+.scroll-line {
+  width: 1px;
+  height: 54px;
+  background: rgba(255,255,255,.78);
+}
+.scroll-arrow {
+  font-size: 1.45rem;
+  line-height: 1;
+}
+
+@media (max-width: 900px) {
+  .site-header-home {
+    position: absolute;
+  }
+  .site-header-home .menu-toggle {
+    display: block;
+    margin-left: auto;
+    position: relative;
+    z-index: 61;
+  }
+  .header-home-shell {
+    padding-top: 16px;
+  }
+  .nav-home {
+    position: absolute;
+    top: 76px;
+    left: 0;
+    right: 0;
+    display: none;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 22px;
+    background: rgba(255,253,249,.96);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(23,63,64,.10);
+    border-radius: 22px;
+    box-shadow: var(--shadow);
+  }
+  .nav-home.open {
+    display: grid;
+  }
+  .nav-group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+  .nav-group-right {
+    justify-content: flex-start;
+  }
+  .nav-group-right .btn {
+    width: 100%;
+  }
+  .brand-home {
+    order: -1;
+    justify-self: center;
+    margin-bottom: 6px;
+  }
+  .brand-home img {
+    width: 132px;
+  }
+  .hero-home-centered {
+    min-height: 780px;
+    padding: 164px 0 80px;
+  }
+  .hero-home-title {
+    font-size: clamp(3rem, 10vw, 4.4rem);
+  }
+  .scroll-cue {
+    margin-top: 70px;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero-home-centered {
+    min-height: 720px;
+    padding: 150px 0 72px;
+  }
+  .hero-home-title {
+    font-size: clamp(2.7rem, 12vw, 3.7rem);
+  }
+  .hero-home-lead {
+    font-size: 1rem;
+  }
+}
