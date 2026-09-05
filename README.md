@@ -32,3 +32,9 @@ window.DORITA_SITE = {
 - La política de privacidad es una plantilla, no asesoría legal. Debe completarse y revisarse antes de publicar.
 - Confirmar con la Dra. Dorita las modalidades de atención, horarios, teléfono, correo y acreditación/formación específica en EMDR antes de añadir afirmaciones más concretas.
 - Las imágenes están optimizadas a WebP para reducir peso.
+
+
+## Hero video and image assets
+- The home hero uses `assets/video/dorita-hero.mp4` with `assets/images/dorita-hero-poster.webp` as fallback.
+- The home closing banner uses `assets/images/home-bottom-forest.webp`.
+- The Sobre mí story image uses `assets/images/about-couch.webp`.

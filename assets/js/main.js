@@ -23,6 +23,12 @@
     items.forEach(el => el.classList.add('visible'));
   }
 
+  const heroVideo = document.querySelector('.hero-video');
+  if (heroVideo && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    heroVideo.pause();
+    heroVideo.removeAttribute('autoplay');
+  }
+
   const cfg = window.DORITA_SITE || {};
   document.querySelectorAll('[data-location]').forEach(el => el.textContent = cfg.location || 'Rionegro, Antioquia');
   document.querySelectorAll('[data-email]').forEach(el => {

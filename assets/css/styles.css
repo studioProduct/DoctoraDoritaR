@@ -313,3 +313,70 @@ textarea { min-height:130px; resize:vertical; }
 .service-process .process-step + .process-step {
   border-color: rgba(23,63,64,.13);
 }
+
+/* September refinements */
+.hero-video-wrap {
+  background: #ead9d1;
+}
+.hero-video {
+  width: 100%;
+  height: 100%;
+  min-height: 720px;
+  display: block;
+  object-fit: cover;
+  object-position: center center;
+}
+
+/* Give the EMDR banner more breathing room around copy and CTA */
+.image-banner {
+  min-height: 430px;
+  padding: 78px 0;
+}
+
+/* Home closing image supplied for the final CTA */
+.cta-home {
+  min-height: 390px;
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(rgba(249,247,241,.30), rgba(249,247,241,.40)),
+    url('../images/home-bottom-forest.webp') center 48% / cover no-repeat;
+}
+.cta-home::before,
+.cta-home::after {
+  display: none;
+}
+.cta-home .h2,
+.cta-home .lead,
+.cta-home .eyebrow {
+  text-shadow: 0 1px 18px rgba(255,255,255,.65);
+}
+
+/* Sobre mí hero: calm blush panel behind Dorita */
+.about-hero {
+  background: linear-gradient(90deg, #fbf8f2 0%, #fbf8f2 53%, #ead9d1 53%, #ead9d1 100%);
+}
+.about-hero .page-hero-img {
+  background: #ead9d1;
+  box-shadow: none;
+}
+
+/* Emphasize the EMDR reflection as its own chapter */
+.service-pause-light {
+  background: #e7d8cf;
+}
+.service-pause-light blockquote {
+  color: #173f40;
+}
+
+@media (max-width: 900px) {
+  .hero-video { min-height: 520px; }
+  .about-hero { background: #f3e5de; }
+  .image-banner { min-height: 410px; padding: 68px 0; }
+  .cta-home { min-height: 350px; background-position: center center; }
+}
+
+@media (max-width: 560px) {
+  .hero-video { min-height: 430px; }
+  .image-banner { min-height: 390px; padding: 60px 0; }
+}
