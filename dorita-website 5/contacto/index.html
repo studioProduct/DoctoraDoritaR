@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contacto | Dra. Dorita Olarte</title>
+  <meta name="description" content="Solicita una consulta con la Dra. Dorita Olarte en Rionegro, Antioquia.">
+  <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+<header class="site-header"><div class="container header-inner">
+  <a class="brand" href="../"><img src="../assets/images/logo.png" alt="Doctora Dorita Olarte Neuropsicóloga"></a>
+  <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+  <nav class="nav"><a href="../">Inicio</a><a href="../sobre-mi/">Sobre mí</a><a href="../servicios/">Servicios</a><a href="./" aria-current="page">Contacto</a><a class="btn" href="#agenda">Agendar consulta →</a></nav>
+</div></header>
+
+<main>
+  <section class="section contact-hero">
+    <div class="container contact-grid">
+      <div class="fade-up">
+        <span class="eyebrow">Contacto</span>
+        <h1 class="h1">Podemos comenzar por una conversación.</h1>
+        <p class="lead" style="margin-top:26px">Si quieres saber cuál puede ser el proceso más apropiado para ti, puedes solicitar una primera consulta.</p>
+        <ul class="contact-list">
+          <li><strong>Ubicación</strong><br><span class="muted" data-location>Rionegro, Antioquia</span></li>
+          <li><strong>Población atendida</strong><br><span class="muted">Adultos</span></li>
+          <li><strong>Correo</strong><br><a class="muted" data-email href="#">Por configurar</a></li>
+          <li><strong>Teléfono</strong><br><a class="muted" data-phone href="#">Por configurar</a></li>
+        </ul>
+        <div class="contact-art"><img src="../assets/images/reading-nook.webp" alt="Espacio tranquilo de consulta" loading="lazy"></div>
+      </div>
+
+      <div class="contact-card fade-up" id="agenda">
+        <span class="eyebrow">Agenda tu consulta</span>
+        <form id="contact-form" class="form-grid">
+          <div><label for="nombre">Nombre completo</label><input id="nombre" name="nombre" required autocomplete="name"></div>
+          <div><label for="telefono">Teléfono</label><input id="telefono" name="telefono" required autocomplete="tel"></div>
+          <div><label for="email">Correo electrónico</label><input id="email" name="email" type="email" required autocomplete="email"></div>
+          <div><label for="motivo">Motivo general de consulta</label><select id="motivo" name="motivo" required><option value="">Seleccionar</option><option>Psicoterapia / EMDR</option><option>Evaluación neuropsicológica</option><option>Neuropsicología clínica / rehabilitación</option><option>Orientación inicial</option><option>Otro</option></select></div>
+          <div><label for="mensaje">Mensaje opcional</label><textarea id="mensaje" name="mensaje" placeholder="Puedes escribir brevemente qué necesitas. Evita incluir información clínica sensible en este formulario."></textarea></div>
+          <label style="display:flex;gap:10px;align-items:flex-start;font-weight:400"><input type="checkbox" required style="width:auto;margin-top:5px"> <span>Autorizo el tratamiento de mis datos de contacto para responder esta solicitud.</span></label>
+          <button class="btn" type="submit">Enviar solicitud →</button>
+          <p class="form-note">Este formulario no reemplaza una valoración clínica ni está diseñado para emergencias.</p>
+          <p id="form-status" class="form-note" hidden></p>
+        </form>
+        <div class="rule" style="margin:34px 0"></div>
+        <a class="btn btn-outline" data-whatsapp href="#" hidden>Escribir por WhatsApp</a>
+        <a class="btn btn-outline" data-doctoralia href="#" hidden style="margin-left:8px">Agendar en Doctoralia</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="full-image-break" style="background-image:url('../assets/images/start-life.webp')" aria-label="Rama verde sobre fondo claro"></section>
+</main>
+
+<footer class="site-footer"><div class="container footer-grid"><a class="footer-logo" href="../"><img src="../assets/images/logo.png" alt="Dra. Dorita Olarte"></a><div class="footer-links"><a href="../privacidad/">Política de privacidad</a><a href="./">Contacto</a></div><div class="footer-note">Ciencia para una vida más plena.</div></div></footer>
+<script src="../assets/js/config.js"></script><script src="../assets/js/main.js"></script>
+</body></html>
