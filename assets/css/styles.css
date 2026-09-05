@@ -733,3 +733,85 @@ textarea { min-height:130px; resize:vertical; }
     background-position: 79% center;
   }
 }
+
+
+/* Final About hero using supplied artwork */
+.about-hero-band {
+  min-height: 720px;
+  background: url('../images/about-hero-new.webp') center center / cover no-repeat;
+}
+.about-hero-band::before {
+  background: linear-gradient(90deg, rgba(8,59,60,.10) 0%, rgba(8,59,60,.04) 46%, rgba(8,59,60,0) 64%);
+}
+.about-hero-copy {
+  max-width: 700px;
+  padding: 96px 0 98px;
+}
+.about-hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+}
+.about-hero-eyebrow::after {
+  content: '';
+  display: block;
+  width: 86px;
+  height: 1px;
+  background: rgba(255,255,255,.75);
+}
+.about-hero-title {
+  max-width: 690px;
+}
+.about-hero-lead {
+  max-width: 620px;
+}
+.about-hero-script-img {
+  display: block;
+  width: min(560px, 92%);
+  height: auto;
+  margin-top: 34px;
+}
+
+@media (max-width: 700px) {
+  .about-hero-band {
+    background: var(--ink-deep);
+  }
+  .about-hero-copy {
+    padding: 62px 24px 54px;
+  }
+  .about-hero-eyebrow {
+    gap: 14px;
+  }
+  .about-hero-eyebrow::after {
+    width: 58px;
+  }
+  .about-hero-title {
+    max-width: 13ch;
+  }
+  .about-hero-lead {
+    max-width: 32rem;
+  }
+  .about-hero-script-img {
+    width: min(430px, 96%);
+    margin-top: 28px;
+  }
+  .about-hero-mobile-image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    min-height: 0;
+    background: url('../images/about-hero-mobile.webp') center center / cover no-repeat;
+  }
+}
+
+@media (max-width: 420px) {
+  .about-hero-copy {
+    padding: 52px 20px 48px;
+  }
+  .about-hero-script-img {
+    width: 100%;
+  }
+  .about-hero-mobile-image {
+    aspect-ratio: 3 / 4.15;
+  }
+}
