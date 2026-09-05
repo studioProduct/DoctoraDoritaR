@@ -290,3 +290,26 @@ textarea { min-height:130px; resize:vertical; }
   .fade-up { opacity:1; transform:none; transition:none; }
   .btn { transition:none; }
 }
+
+/* Services page section rhythm: calm alternation between chapters */
+.service-emdr {
+  background: #fbf1ec;
+}
+.service-pause-light {
+  background: #fffdf9;
+}
+.service-neuro {
+  background: #eaf1ed;
+}
+.service-pause-rose {
+  background: #f6e9e3;
+}
+.service-process {
+  background: #f8f5ef;
+}
+.service-emdr .clean-list li,
+.service-neuro .neuro-grid,
+.service-neuro .neuro-item,
+.service-process .process-step + .process-step {
+  border-color: rgba(23,63,64,.13);
+}
