@@ -815,3 +815,143 @@ textarea { min-height:130px; resize:vertical; }
     aspect-ratio: 3 / 4.15;
   }
 }
+
+
+/* September 7 refinements: interior navigation + Services page */
+.site-header-interior .brand img {
+  width: 118px; /* 20% smaller than the original 148px interior header logo */
+  height: auto;
+}
+
+/* Keep Home as the only centered-logo navigation. */
+.site-header-home .brand-home img {
+  width: 162px;
+}
+
+/* Services hero: full-color forest image with white typography. */
+.service-hero-forest {
+  position: relative;
+  min-height: 610px;
+  padding: 140px 0 120px;
+  display: flex;
+  align-items: center;
+  background: url('../images/home-hero-forest.webp') center 58% / cover no-repeat;
+  overflow: hidden;
+}
+.service-hero-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(8,52,53,.72) 0%, rgba(8,52,53,.51) 48%, rgba(8,52,53,.24) 100%);
+}
+.service-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 850px;
+  margin-left: 0;
+}
+.service-hero-forest .eyebrow,
+.service-hero-forest .h1,
+.service-hero-forest .lead,
+.service-hero-forest .text-link {
+  color: #fff;
+}
+.service-hero-forest .eyebrow {
+  color: rgba(255,255,255,.82);
+}
+.service-hero-forest .lead {
+  max-width: 720px;
+  margin-top: 28px;
+  color: rgba(255,255,255,.9);
+}
+.service-hero-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  margin-top: 34px;
+}
+.service-hero-links .text-link {
+  margin-top: 0;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(255,255,255,.48);
+}
+
+/* Services closing CTA: forest around a centered white content panel. */
+.services-cta-forest {
+  position: relative;
+  min-height: 520px;
+  padding: 105px 0;
+  display: flex;
+  align-items: center;
+  background: url('../images/home-hero-forest.webp') center center / cover no-repeat;
+  overflow: hidden;
+}
+.services-cta-shade {
+  position: absolute;
+  inset: 0;
+  background: rgba(10,52,53,.18);
+}
+.services-cta-wrap {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+}
+.services-cta-panel {
+  width: min(880px, 100%);
+  padding: 64px 72px;
+  background: rgba(255,253,249,.97);
+  text-align: center;
+  box-shadow: 0 24px 70px rgba(10,38,39,.16);
+}
+.services-cta-panel .lead {
+  margin: 22px auto 30px;
+  max-width: 690px;
+}
+
+@media (max-width: 900px) {
+  .site-header-interior .brand img {
+    width: 102px;
+  }
+  .service-hero-forest {
+    min-height: 520px;
+    padding: 105px 0 90px;
+    background-position: 58% center;
+  }
+  .service-hero-shade {
+    background: linear-gradient(90deg, rgba(8,52,53,.76), rgba(8,52,53,.40));
+  }
+  .service-hero-content {
+    max-width: 690px;
+  }
+  .services-cta-forest {
+    min-height: 470px;
+    padding: 72px 0;
+  }
+  .services-cta-panel {
+    padding: 48px 38px;
+  }
+}
+
+@media (max-width: 560px) {
+  .site-header-interior .brand img {
+    width: 96px;
+  }
+  .service-hero-forest {
+    min-height: 500px;
+    padding: 90px 0 76px;
+    background-position: 65% center;
+  }
+  .service-hero-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .services-cta-forest {
+    min-height: 430px;
+    padding: 54px 0;
+    background-position: 58% center;
+  }
+  .services-cta-panel {
+    padding: 40px 24px;
+  }
+}
