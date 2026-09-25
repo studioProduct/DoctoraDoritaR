@@ -54,11 +54,13 @@
       e.preventDefault();
       const data = new FormData(form);
       const name = data.get('nombre') || '';
+      const country = data.get('pais') || '';
       const phone = data.get('telefono') || '';
       const email = data.get('email') || '';
       const reason = data.get('motivo') || '';
+      const modality = data.get('modalidad') || '';
       const message = data.get('mensaje') || '';
-      const body = `Hola, soy ${name}.%0A%0AMotivo de consulta: ${reason}%0ATeléfono: ${phone}%0AEmail: ${email}%0A%0A${message}`;
+      const body = `Hola, soy ${name}.%0A%0APaís: ${country}%0AMotivo de consulta: ${reason}%0AModalidad: ${modality}%0ATeléfono: ${phone}%0AEmail: ${email}%0A%0A${message}`;
       if (cfg.whatsapp) {
         window.location.href = `https://wa.me/${cfg.whatsapp.replace(/\D/g,'')}?text=${encodeURIComponent(body.replace(/%0A/g,'\n'))}`;
       } else if (cfg.email) {
