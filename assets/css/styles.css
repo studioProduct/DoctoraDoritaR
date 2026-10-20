@@ -367,3 +367,163 @@ textarea { min-height:140px; resize:vertical; }
   .fade-up { opacity:1; transform:none; transition:none; }
   .btn { transition:none; }
 }
+
+/* Interactive refinement inspired by progressive SaaS storytelling, adapted for a calm clinical brand */
+.hero-wordline {
+  margin: -10px 0 28px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: baseline;
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  color: #696b67;
+}
+.hero-wordline strong {
+  color: var(--rose);
+  font-weight: 500;
+  font-style: italic;
+  min-width: 130px;
+  display: inline-block;
+  transition: opacity .28s ease, transform .28s ease;
+}
+.hero-wordline strong.is-changing { opacity: 0; transform: translateY(6px); }
+
+.service-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform .28s ease, background .28s ease, box-shadow .28s ease;
+}
+.service-card::after {
+  content: '';
+  position: absolute;
+  left: 28px;
+  right: 28px;
+  bottom: 0;
+  height: 3px;
+  background: var(--rose);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform .28s ease;
+}
+.service-card .service-icon { transition: transform .28s ease, background .28s ease; }
+.service-card .text-link { transition: gap .25s ease; }
+@media (hover: hover) and (pointer: fine) {
+  .service-card:hover { transform: translateY(-8px); background: #fff; box-shadow: 0 20px 55px rgba(58,58,58,.07); z-index: 2; }
+  .service-card:hover::after { transform: scaleX(1); }
+  .service-card:hover .service-icon { transform: translateY(-4px) rotate(-2deg); }
+  .service-card:hover .text-link { gap: 13px; }
+}
+
+.pathway-section { background: linear-gradient(180deg, #fff 0%, #f8f4ef 100%); }
+.pathway-grid { display:grid; grid-template-columns:.9fr 1.1fr; gap:110px; align-items:start; }
+.pathway-intro .lead { margin-top:28px; }
+.pathway-panel { background:#fff; border:1px solid var(--line); box-shadow:var(--shadow); padding:18px; }
+.pathway-tabs { display:grid; gap:8px; }
+.pathway-tab {
+  width:100%;
+  min-height:64px;
+  padding:15px 18px;
+  border:1px solid transparent;
+  background:transparent;
+  color:#555954;
+  text-align:left;
+  cursor:pointer;
+  font-size:.9rem;
+  transition:background .22s ease, border-color .22s ease, color .22s ease, transform .22s ease;
+}
+.pathway-tab:hover { background:var(--ivory); }
+.pathway-tab.active { background:#F7EDEE; border-color:rgba(200,155,162,.35); color:var(--charcoal); transform:translateX(4px); }
+.pathway-result { margin-top:14px; padding:42px 38px 36px; background:var(--ivory); min-height:285px; }
+.pathway-kicker { display:block; margin-bottom:14px; color:var(--rose); font-size:.7rem; font-weight:600; letter-spacing:.18em; text-transform:uppercase; }
+.pathway-result p { color:#696c67; margin:20px 0 22px; }
+.pathway-result.is-changing { animation:pathwayFade .28s ease; }
+@keyframes pathwayFade { from { opacity:.35; transform:translateY(6px); } to { opacity:1; transform:none; } }
+
+.parallax-media { position:relative; overflow:hidden; }
+.parallax-media img { transform:scale(1.04); will-change:transform; }
+
+.location-switcher { margin:34px 0 28px; }
+.location-tabs { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:14px; }
+.location-tab {
+  min-height:42px;
+  padding:0 15px;
+  border-radius:999px;
+  border:1px solid rgba(58,58,58,.18);
+  background:transparent;
+  color:#5d605c;
+  cursor:pointer;
+  font-size:.78rem;
+  transition:background .22s ease, color .22s ease, border-color .22s ease;
+}
+.location-tab.active { background:var(--olive); border-color:var(--olive); color:#fff; }
+.location-card { display:grid; grid-template-columns:46px 1fr; gap:16px; align-items:start; background:#fff; padding:24px 26px; border:1px solid rgba(58,58,58,.08); }
+.location-symbol { width:42px; height:42px; border-radius:50%; background:#F6EDEE; color:var(--rose); display:grid; place-items:center; font-family:var(--serif); }
+.location-card strong { color:var(--charcoal); }
+.location-card p { margin:8px 0 0; color:#71746e; font-size:.86rem; }
+.location-card.is-changing { animation:pathwayFade .28s ease; }
+
+.faq-section { background:#fff; }
+.faq-grid { display:grid; grid-template-columns:.8fr 1.2fr; gap:110px; align-items:start; }
+.faq-intro { position:sticky; top:130px; }
+.faq-intro .lead { margin-top:26px; }
+.faq-list details { border-top:1px solid var(--line); }
+.faq-list details:last-child { border-bottom:1px solid var(--line); }
+.faq-list summary {
+  list-style:none;
+  cursor:pointer;
+  padding:28px 54px 28px 0;
+  position:relative;
+  font-family:var(--serif);
+  font-size:1.55rem;
+  line-height:1.25;
+  color:var(--charcoal);
+}
+.faq-list summary::-webkit-details-marker { display:none; }
+.faq-list summary::after {
+  content:'+';
+  position:absolute;
+  right:2px;
+  top:50%;
+  transform:translateY(-50%);
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  border:1px solid rgba(58,58,58,.18);
+  display:grid;
+  place-items:center;
+  font-family:var(--sans);
+  font-size:1rem;
+  transition:transform .22s ease, background .22s ease;
+}
+.faq-list details[open] summary::after { content:'−'; background:#F6EDEE; transform:translateY(-50%) rotate(180deg); }
+.faq-list details p { max-width:720px; margin:0; padding:0 60px 28px 0; color:#686b67; }
+
+/* More graceful scroll entrances */
+.fade-up { transform:translateY(24px); transition:opacity .75s cubic-bezier(.22,.61,.36,1), transform .75s cubic-bezier(.22,.61,.36,1); }
+
+@media (max-width: 900px) {
+  .pathway-grid,.faq-grid { grid-template-columns:1fr; gap:54px; }
+  .faq-intro { position:static; }
+  .parallax-media img { transform:none !important; }
+}
+
+@media (max-width: 600px) {
+  .hero-wordline { font-size:1.08rem; margin-top:-6px; }
+  .pathway-panel { padding:12px; }
+  .pathway-tab { min-height:58px; padding:13px 14px; }
+  .pathway-tab.active { transform:none; }
+  .pathway-result { padding:32px 22px 28px; min-height:0; }
+  .location-tabs { gap:7px; }
+  .location-tab { flex:1 1 calc(50% - 7px); padding:0 10px; }
+  .location-card { grid-template-columns:38px 1fr; padding:20px; }
+  .location-symbol { width:36px; height:36px; }
+  .faq-list summary { padding:23px 48px 23px 0; font-size:1.3rem; }
+  .faq-list details p { padding-right:0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-wordline strong,.service-card,.service-icon,.pathway-tab,.location-tab,.faq-list summary::after { transition:none; }
+  .parallax-media img { transform:none !important; }
+  .pathway-result.is-changing,.location-card.is-changing { animation:none; }
+}

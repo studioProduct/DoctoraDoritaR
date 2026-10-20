@@ -1,18 +1,16 @@
 # Dorita Olarte Website
 
-Sitio estático en español para Dra. Dorita Olarte, Psicología y Neuropsicología.
+Static responsive website prepared for GitHub + Cloudflare Pages.
 
-## Estructura
-- `/` Inicio
-- `/sobre-mi/`
-- `/servicios/`
-- `/contacto/`
-- `/privacidad/`
+## Interactive update
+- Progressive hero micro-animation: comprender / acompañar / transformar
+- Interactive care-path selector
+- Interactive country / modality context for virtual care
+- Expandable FAQ accordion
+- Subtle service-card motion and conference-image parallax on desktop
+- Reduced-motion support and mobile-first fallbacks
 
-## Configuración pendiente antes de publicar
-Editar `assets/js/config.js` con correo, teléfono, WhatsApp y, si aplica, enlace de agenda.
-
-## Despliegue en Cloudflare Pages
-Framework preset: `None`
-Build command: dejar vacío o `exit 0`
+## Deployment
+Framework preset: None
+Build command: leave blank (or `exit 0` if required)
 Build output directory: `.`
