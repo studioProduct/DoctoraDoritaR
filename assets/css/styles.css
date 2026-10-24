@@ -786,3 +786,50 @@ textarea { min-height:140px; resize:vertical; }
   .service-grid-three .service-card { min-height:0; padding:42px 24px 38px; }
   .home-hero-title { max-width: 100%; }
 }
+
+
+/* 2026-10-23 refinement: calmer rhythm with ~50% less vertical space between sections */
+.section { padding-top: 70px; padding-bottom: 70px; }
+.section-sm { padding-top: 44px; padding-bottom: 44px; }
+.section-lg { padding-top: 84px; padding-bottom: 84px; }
+.service-chapter { padding-top: 72px; padding-bottom: 72px; }
+.breathing-quote { padding-top: 72px; padding-bottom: 72px; }
+.services-final { padding-top: 76px; padding-bottom: 76px; }
+.section-heading { margin-bottom: 42px; }
+
+@media (max-width: 900px) {
+  .section { padding-top: 54px; padding-bottom: 54px; }
+  .section-sm { padding-top: 38px; padding-bottom: 38px; }
+  .section-lg { padding-top: 60px; padding-bottom: 60px; }
+  .service-chapter { padding-top: 56px; padding-bottom: 56px; }
+  .breathing-quote { padding-top: 56px; padding-bottom: 56px; }
+  .services-final { padding-top: 58px; padding-bottom: 58px; }
+  .section-heading { margin-bottom: 36px; }
+}
+
+@media (max-width: 600px) {
+  .section { padding-top: 42px; padding-bottom: 42px; }
+  .section-sm { padding-top: 32px; padding-bottom: 32px; }
+  .section-lg { padding-top: 48px; padding-bottom: 48px; }
+  .service-chapter { padding-top: 46px; padding-bottom: 46px; }
+  .breathing-quote { padding-top: 46px; padding-bottom: 46px; }
+  .services-final { padding-top: 50px; padding-bottom: 50px; }
+  .section-heading { margin-bottom: 30px; }
+  /* Keep breathing room inside cards even though inter-section spacing is tighter. */
+  .service-card { padding-top: 38px; padding-bottom: 34px; }
+  .clinical-proof-grid,
+  .clinical-proof-grid.reverse,
+  .virtual-grid,
+  .page-hero-grid,
+  .about-story-grid,
+  .approach-grid,
+  .chapter-grid,
+  .dark-grid,
+  .contact-grid { row-gap: 34px; }
+}
+
+/* About page: use the same current portrait as the Home hero while preserving a natural crop. */
+.sobre-mi .page-hero-image img,
+.page-hero-image img[src*="dorita-hero-final"] {
+  object-position: center 20%;
+}
