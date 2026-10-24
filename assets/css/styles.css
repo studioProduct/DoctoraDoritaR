@@ -116,7 +116,7 @@ button,input,textarea,select { font: inherit; }
   position:absolute;
   top:0; right:0; bottom:0;
   width:58%;
-  background: url('../images/dorita-portrait-original.webp') center 28% / cover no-repeat;
+  background: url('../images/dorita-hero-final.webp') center 24% / cover no-repeat;
 }
 .home-hero-fade {
   position:absolute;
@@ -289,7 +289,7 @@ textarea { min-height:140px; resize:vertical; }
   .home-hero { min-height:0; display:block; }
   .home-hero-photo,.home-hero-fade { display:none; }
   .home-hero-copy { width:100%; padding:92px 0 62px; }
-  .home-hero-mobile-photo { display:block; height:540px; background:url('../images/dorita-portrait-original.webp') center 20%/cover no-repeat; }
+  .home-hero-mobile-photo { display:block; height:540px; background:url('../images/dorita-hero-final.webp') center 18%/cover no-repeat; }
   .display { font-size:clamp(3.45rem,11vw,5rem); }
   .trust-row { max-width:none; }
 
@@ -696,4 +696,93 @@ textarea { min-height:140px; resize:vertical; }
       url('../images/growth-seedling.webp') center / cover no-repeat;
   }
   .cta-grid { min-height: 0; padding-top: 26px; padding-bottom: 26px; }
+}
+
+
+/* Clinical team imagery: real interdisciplinary experience */
+.clinical-proof {
+  background: var(--cream);
+}
+.clinical-proof-grid {
+  display: grid;
+  grid-template-columns: 1.12fr .88fr;
+  gap: 88px;
+  align-items: center;
+}
+.clinical-proof-grid.reverse {
+  grid-template-columns: .88fr 1.12fr;
+}
+.clinical-proof-grid.reverse .clinical-proof-photo { order: 2; }
+.clinical-proof-grid.reverse .clinical-proof-copy { order: 1; }
+.clinical-proof-photo {
+  overflow: hidden;
+  background: #fff;
+}
+.clinical-proof-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  object-position: center;
+  box-shadow: var(--shadow);
+}
+.clinical-proof-copy { max-width: 620px; }
+.clinical-proof-copy .lead { margin-top: 24px; }
+.clinical-proof-note {
+  margin-top: 28px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: .9rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .clinical-proof-grid,
+  .clinical-proof-grid.reverse {
+    grid-template-columns: 1fr;
+    gap: 46px;
+  }
+  .clinical-proof-grid.reverse .clinical-proof-photo,
+  .clinical-proof-grid.reverse .clinical-proof-copy { order: initial; }
+  .clinical-proof-copy { max-width: 760px; }
+}
+
+@media (max-width: 600px) {
+  .clinical-proof-grid,
+  .clinical-proof-grid.reverse { gap: 34px; }
+  .clinical-proof-photo img { aspect-ratio: 4 / 3; }
+  .clinical-proof-note { margin-top: 22px; padding-top: 18px; }
+}
+
+
+/* Conversion refinement: clearer hierarchy and three primary care paths */
+.home-services .section-heading { max-width: 860px; }
+.home-services .section-heading .lead { max-width: 720px; }
+.service-grid-three { grid-template-columns: repeat(3, 1fr); }
+.service-grid-three .service-card { min-height: 350px; padding: 52px 42px 44px; }
+.service-grid-three .service-card .h3 { max-width: 310px; min-height: 2.45em; }
+.service-grid-three .service-card p { max-width: 330px; font-size: .91rem; }
+.home-hero-title { max-width: 660px; }
+.home-hero-copy { width:min(660px,53%); }
+
+/* Keep conversion CTA language consistent with a request form rather than a live calendar */
+.contact-card .btn[type="submit"] { min-width: 210px; }
+
+@media (max-width: 900px) {
+  .service-grid-three { grid-template-columns: 1fr 1fr; }
+  .service-grid-three .service-card:nth-child(n) { border-top: 1px solid var(--line); border-left: 0; }
+  .service-grid-three .service-card:nth-child(1),
+  .service-grid-three .service-card:nth-child(2) { border-top: 0; }
+  .service-grid-three .service-card:nth-child(even) { border-left: 1px solid var(--line); }
+  .service-grid-three .service-card:last-child { grid-column: 1 / -1; border-left: 0; }
+  .service-grid-three .service-card .h3 { min-height: 0; }
+}
+@media (max-width: 600px) {
+  .service-grid-three { grid-template-columns: 1fr; }
+  .service-grid-three .service-card:nth-child(n) { grid-column:auto; border-left:0; border-top:1px solid var(--line); }
+  .service-grid-three .service-card:first-child { border-top:0; }
+  .service-grid-three .service-card { min-height:0; padding:42px 24px 38px; }
+  .home-hero-title { max-width: 100%; }
 }

@@ -8,6 +8,24 @@
     });
   }
 
+
+  // Conversion measurement hooks. Works with gtag if added later and always emits a local custom event.
+  const trackEvent = (name, detail = {}) => {
+    const clean = Object.assign({}, detail);
+    if (typeof window.gtag === 'function') window.gtag('event', name, clean);
+    if (Array.isArray(window.dataLayer)) window.dataLayer.push(Object.assign({ event: name }, clean));
+    window.dispatchEvent(new CustomEvent('dorita:analytics', { detail: Object.assign({ event: name }, clean) }));
+  };
+
+  document.querySelectorAll('a.btn').forEach((link) => {
+    link.addEventListener('click', () => {
+      trackEvent('cta_click', {
+        label: (link.textContent || '').trim().slice(0, 80),
+        destination: link.getAttribute('href') || ''
+      });
+    });
+  });
+
   const items = document.querySelectorAll('.fade-up');
   if ('IntersectionObserver' in window) {
     const io = new IntersectionObserver(entries => {
@@ -81,6 +99,7 @@
       tab.addEventListener('click', () => {
         const item = content[tab.dataset.path];
         if (!item) return;
+        trackEvent('care_path_selected', { path: tab.dataset.path });
         tabs.forEach(t => {
           const active = t === tab;
           t.classList.toggle('active', active);
@@ -114,6 +133,7 @@
       tab.addEventListener('click', () => {
         const item = content[tab.dataset.locationTab];
         if (!item) return;
+        trackEvent('location_selected', { location_group: tab.dataset.locationTab });
         tabs.forEach(t => {
           const active = t === tab;
           t.classList.toggle('active', active);
@@ -177,8 +197,15 @@
 
   const form = document.querySelector('#contact-form');
   if (form) {
+    let formStarted = false;
+    form.addEventListener('focusin', () => {
+      if (formStarted) return;
+      formStarted = true;
+      trackEvent('lead_form_start');
+    });
     form.addEventListener('submit', (e) => {
       e.preventDefault();
+      trackEvent('lead_form_submit_attempt');
       const data = new FormData(form);
       const name = data.get('nombre') || '';
       const country = data.get('pais') || '';
@@ -189,8 +216,10 @@
       const message = data.get('mensaje') || '';
       const body = `Hola, soy ${name}.%0A%0APaís: ${country}%0AMotivo de consulta: ${reason}%0AModalidad: ${modality}%0ATeléfono: ${phone}%0AEmail: ${email}%0A%0A${message}`;
       if (cfg.whatsapp) {
+        trackEvent('lead_form_routed', { channel: 'whatsapp' });
         window.location.href = `https://wa.me/${cfg.whatsapp.replace(/\D/g,'')}?text=${encodeURIComponent(body.replace(/%0A/g,'\n'))}`;
       } else if (cfg.email) {
+        trackEvent('lead_form_routed', { channel: 'email' });
         window.location.href = `mailto:${cfg.email}?subject=${encodeURIComponent('Solicitud de consulta - ' + name)}&body=${body}`;
       } else {
         const status = document.querySelector('#form-status');
