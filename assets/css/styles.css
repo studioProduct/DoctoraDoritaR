@@ -833,3 +833,67 @@ textarea { min-height:140px; resize:vertical; }
 .page-hero-image img[src*="dorita-hero-final"] {
   object-position: center 20%;
 }
+
+
+/* 2026-10-23 Contact + Home pathway refinement */
+/* Contact: keep the information column editorial and remove portrait dependency. */
+.contact-info { max-width: 560px; }
+.contact-info .contact-list { margin-bottom: 0; }
+.contact-grid { align-items: stretch; }
+.contact-card { align-self: start; }
+
+/* Contact closing banner: reuse the established forest language from the site. */
+.contact-banner {
+  min-height: 300px;
+  background:
+    linear-gradient(rgba(255,255,255,.18), rgba(255,255,255,.18)),
+    url('../images/home-hero-forest.webp') center 58% / cover no-repeat;
+}
+
+/* Home: make the guided starting-point selector a clear decision moment. */
+.pathway-highlight {
+  position: relative;
+  background:
+    radial-gradient(circle at 88% 14%, rgba(200,155,162,.16), transparent 34%),
+    linear-gradient(135deg, #f8efef 0%, #fbf8f3 52%, #f2f4ee 100%);
+  border-top: 1px solid rgba(200,155,162,.22);
+  border-bottom: 1px solid rgba(138,149,129,.18);
+}
+.pathway-highlight .pathway-grid {
+  position: relative;
+  padding: 44px;
+  background: rgba(255,255,255,.56);
+  border: 1px solid rgba(200,155,162,.18);
+  box-shadow: 0 22px 60px rgba(58,58,58,.055);
+}
+.pathway-highlight .pathway-intro .eyebrow {
+  color: var(--rose);
+}
+.pathway-highlight .pathway-panel {
+  border-color: rgba(200,155,162,.28);
+  box-shadow: 0 24px 60px rgba(58,58,58,.075);
+}
+.pathway-highlight .pathway-tab {
+  border-radius: 2px;
+  font-size: .94rem;
+}
+.pathway-highlight .pathway-tab.active {
+  background: #f2dfe2;
+  border-color: rgba(200,155,162,.48);
+  color: var(--charcoal);
+}
+.pathway-highlight .pathway-result {
+  background: rgba(248,244,239,.92);
+}
+
+@media (max-width: 900px) {
+  .pathway-highlight .pathway-grid { padding: 32px; }
+  .contact-grid { align-items:start; }
+}
+
+@media (max-width: 600px) {
+  .pathway-highlight .pathway-grid { padding: 20px 16px; }
+  .pathway-highlight .pathway-panel { padding: 10px; }
+  .pathway-highlight .pathway-tab { font-size: .9rem; }
+  .contact-banner { min-height: 210px; background-position: center 62%; }
+}
